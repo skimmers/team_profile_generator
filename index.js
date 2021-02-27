@@ -211,5 +211,5 @@ function createIntern() {
 }
 
 function buildTeam() {
-    fs.writeFileSync(outputPath, render(employeeTeam), "utf8");
+    fs.writeFileSync(distPath, render(employeeTeam), "utf8");
 }
