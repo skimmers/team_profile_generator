@@ -10,7 +10,7 @@ const Intern = require("./lib/intern");
 const DIST_DIR = path.resolve(__dirname, "dist");
 const distPath = path.join(DIST_DIR, "index.html");
 
-const render = require("./dist/htmlRendered");
+const render = require("./lib/htmlRendered");
 
 const employeeTeam = [];
 
