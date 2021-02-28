@@ -1,11 +1,11 @@
+const Manager = require("./lib/Manager");
+const Engineer = require("./lib/Engineer");
+const Intern = require("./lib/Intern");
+
 //Dependencies
 const inquirer = require("inquirer");
 const path = require("path");
 const fs = require('fs');
-
-const Manager = require("./lib/manager");
-const Engineer = require("./lib/engineer");
-const Intern = require("./lib/intern");
 
 const DIST_DIR = path.resolve(__dirname, "dist");
 const distPath = path.join(DIST_DIR, "index.html");
@@ -73,7 +73,7 @@ function createManager() {
                 response.number
             );
             employeeTeam.push(newManager);
-            fs.createReadStream();
+            createTeam();
         });
 }
 
@@ -99,9 +99,19 @@ function createTeam() {
                 case "Yes, add a Manager":
                     createManager();
                     break;
+                case "Yes, add a Engineer":
+                    createEngineer();
+                    break;
+                case "Yes, add a Intern":
+                    createIntern();
+                    break;
+                case "No, My team is complete":
+                    buildTeam();
+                    break;
             }
         });
 }
+
 function createEngineer() {
     inquirer
         .prompt([
